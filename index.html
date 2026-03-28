@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Dashiel Soares</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      background: #020617;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0ea5e9;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .foto {
+      width: 150px;
+      border-radius: 50%;
+      margin-top: 15px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .projetos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 30px;
+    }
+
+    button {
+      background: #38bdf8;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Dashiel Soares</h1>
+  <p>Supervisor de Telecom | Futuro Desenvolvedor Web</p>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section id="sobre">
+  <h2>Sobre mim</h2>
+  <img src="foto.jpg" alt="Foto de Dashiel" class="foto">
+
+  <p>Meu nome é Dashiel Soares, atualmente atuo como Supervisor na área de Telecomunicações, onde tenho experiência com gestão de equipes, controle de materiais e acompanhamento de operações em campo.</p>
+
+  <p>Estou em transição de carreira para a área de tecnologia, com foco em desenvolvimento web, estudando HTML, CSS e JavaScript, buscando evoluir constantemente e criar soluções práticas.</p>
+
+  <p>Tenho interesse em desenvolver sistemas que ajudem no dia a dia das empresas, principalmente na área de telecom, como controle de estoque, gestão de técnicos e aplicativos de atendimento.</p>
+</section>
+
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <div class="card">
+    <ul>
+      <li>HTML e CSS</li>
+      <li>JavaScript (básico)</li>
+      <li>Redes de Telecomunicações</li>
+      <li>Gestão de Equipes</li>
+      <li>Controle de materiais e operações</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projetos">
+  <h2>Projetos</h2>
+  <div class="projetos" id="lista-projetos"></div>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <p>Email: dashielsoares@email.com</p>
+  <p>GitHub: https://github.com/dashielsoares</p>
+</section>
+
+<footer>
+  <p>© 2026 - Dashiel Soares</p>
+</footer>
+
+<script>
+  const projetos = [
+    {
+      nome: "Sistema de Pedidos com Pix",
+      descricao: "Sistema web para pedidos com geração de QR Code para pagamento via Pix, com foco em praticidade e rapidez no atendimento."
+    },
+    {
+      nome: "App de Controle de Técnicos",
+      descricao: "Aplicativo para gerenciar técnicos de campo, controlar materiais utilizados e acompanhar produtividade diária."
+    },
+    {
+      nome: "Sistema de Controle de Estoque",
+      descricao: "Sistema para controle de materiais de telecom, como ONU, cabos e conectores, facilitando organização e reposição."
+    }
+  ];
+
+  const container = document.getElementById("lista-projetos");
+
+  projetos.forEach(projeto => {
+    const div = document.createElement("div");
+    div.classList.add("card");
+
+    div.innerHTML = `
+      <h3>${projeto.nome}</h3>
+      <p>${projeto.descricao}</p>
+      <button>Ver Projeto</button>
+    `;
+
+    container.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
